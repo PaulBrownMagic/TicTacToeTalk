@@ -25,7 +25,7 @@ jobs:
       - name: Run the application tests
         run: |
           logtalk_tester -f tap -c xml
-          xsltproc --stringparam prefix work/TicTacToeTalk/TicTacToeTalk/ --stringparam url https://github.com/PaulBrownMagic/TicTacToeTalk/tree/49f7a3048c3fd640fa9186c103951ff269ee7459 -o coverage_report.html coverage_report.xml
+          xsltproc --stringparam prefix work/TicTacToeTalk/TicTacToeTalk/ --stringparam url https://github.com/$GITHUB_REPOSITORY/tree/$GITHUB_SHA -o coverage_report.html coverage_report.xml
       - name: Upload TAP report
         uses: actions/upload-artifact@master
         with:

@@ -60,6 +60,9 @@
         ^^set_text_input('1.\n2.'),
         human(x)::choose_move(board([[o, 2, 3], [4, 5, 6], [7, 8, 9]]), N).
 
+    test(player_choose_move, fail) :-
+        player::choose_move(board([[o, 2, 3], [4, 5, 6], [7, 8, 9]]), _).
+
 
     test(comp_only_move, true(B == board([[x, o, x], [o, x, o], [x, o, o]]))) :-
         computer(easy)::move(board([[x, o, x], [o, x, o], [x, o, 9]]), B).
