@@ -1,0 +1,37 @@
+name: Documenting
+
+on: [push]
+
+jobs:
+  documenting:
+    runs-on: ubuntu-latest
+    env:
+      LOGTALKHOME: /usr/local/share/logtalk
+      LOGTALKUSER: /home/runner/logtalk
+    steps:
+      - name: Install SWI-Prolog backend
+        uses: logtalk-actions/setup-swi-prolog@master
+        with:
+          swipl-branch: stable
+          swipl-version: latest
+      - name: Install Logtalk
+        uses: logtalk-actions/setup-logtalk@master
+        with:
+          logtalk-version: 3.31.0
+      - name: Checkout Logtalk application to be tested
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+      - name: Generate the application documentation
+        run: |
+          swilgt -g "{loader,lgtdoc(loader)},lgtdoc::directory('.')" -t halt
+          cd xml_docs
+          printf 'n\nAliases example\nPaulo Moura\n\n\n' | lgt2rst -s -t "Aliases example"
+          make html
+          cd _build/html
+          zip -r ../../../docs.zip *
+      - name: Upload documentation
+        uses: actions/upload-artifact@master
+        with:
+          name: docs
+          path: docs.zip

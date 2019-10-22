@@ -1,0 +1,36 @@
+@startuml
+class game(Mode) << (O, #11FF33) >> {
+    {method} + play/0
+    {method} -turn/3
+}
+
+
+class board(Board) << (O, #1133FF) >> {
+    {method} +init/0
+    {method} +available_move/1
+    {method} +update/3
+    {method} +print_board/1
+}
+
+class player << (O, #FF1133) >> {
+    {field} -char/1
+    {method} +move/2
+    {method} +choose_move/2
+    {method} +has_won/1
+    {method} +win_msg/0
+}
+
+class human(Char) << (O, #FF1133) >>
+
+class computer(Difficulty) << (O, #FF1133) >> {
+    {method} -choose_move/3
+}
+
+player <|-- "extends" "human(Char)"
+player <|-- "extends" "computer(Difficulty)"
+
+"game(Mode)" -- "board(Board)"
+"game(Mode)" -- "player"
+
+
+@enduml

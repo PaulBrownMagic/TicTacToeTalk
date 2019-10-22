@@ -1,0 +1,34 @@
+name: Diagrams
+
+on: [push]
+
+jobs:
+  diagrams:
+    runs-on: ubuntu-latest
+    env:
+      LOGTALKHOME: /usr/local/share/logtalk
+      LOGTALKUSER: /home/runner/logtalk
+    steps:
+      - name: Install SWI-Prolog backend
+        uses: logtalk-actions/setup-swi-prolog@master
+        with:
+          swipl-branch: stable
+          swipl-version: latest
+      - name: Install Logtalk
+        uses: logtalk-actions/setup-logtalk@master
+        with:
+          logtalk-version: 3.31.0
+      - name: Checkout Logtalk application to be tested
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+      - name: Generate the application diagrams
+        run: |
+          swilgt -g "{loader,diagrams(loader)},diagrams::directory('.')" -t halt
+          lgt2svg
+          zip diagrams.zip *.svg
+      - name: Upload diagrams
+        uses: actions/upload-artifact@master
+        with:
+          name: diagrams
+          path: diagrams.zip
