@@ -215,8 +215,8 @@
         choose_move(_Difficulty_, Board, N).
 
     :- public(choose_move/3).
-    :- mode(move(+atom, +list, -integer), zero_or_one).
-    :- info(move/3,
+    :- mode(choose_move(+atom, +list, -integer), zero_or_more).
+    :- info(choose_move/3,
         [ comment is 'Choose a move using the strategy appropriate for the Difficulty'
         , argnames is ['Difficulty', 'Board', 'Move']
         ]).

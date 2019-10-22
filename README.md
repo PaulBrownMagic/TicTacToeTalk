@@ -1,6 +1,6 @@
 # TicTacToeTalk
 
-![](https://github.com/PaulBrownMagic/tictactoetalk/workflows/Testing/badge.svg) [Coverage Report](https://logtalk-actions.github.io/demo/coverage_report.html)
+![](https://github.com/PaulBrownMagic/tictactoetalk/workflows/Testing/badge.svg) [Coverage Report](https://PaulBrownMagic.github.io/TicTacToeTalk/coverage_report.html)
 
 ![](https://github.com/PaulBrownMagic/tictactoetalk/workflows/Diagrams/badge.svg)
 
