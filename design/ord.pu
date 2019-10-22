@@ -26,11 +26,10 @@ class computer(Difficulty) << (O, #FF1133) >> {
     {method} -choose_move/3
 }
 
-player <|-- "extends" "human(Char)"
-player <|-- "extends" "computer(Difficulty)"
+player <|-- "human(Char)" : "extends"
+player <|-- "computer(Difficulty)" : "extends"
 
 "game(Mode)" -- "board(Board)"
-"game(Mode)" -- "player"
-
+"game(Mode)" --{ "player"
 
 @enduml
