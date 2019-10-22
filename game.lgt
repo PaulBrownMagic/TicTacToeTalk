@@ -1,6 +1,5 @@
 :- encoding('UTF-8').
 
-
 :- object(board(_Board_)).
 
     :- info([ version is 1.0
@@ -79,6 +78,7 @@
 
 :- end_object.
 
+
 :- object(player).
 
     :- info([ version is 1.0
@@ -86,6 +86,7 @@
             , date is 2019/10/22
             , comment is 'A human player'
             ]).
+
     :- private(char/1).
     :- mode(char(?atom), zero_or_one).
     :- info(char/1,
@@ -109,6 +110,7 @@
     has_won(board(Board)) :-
         ::char(C),
         has_won(C, Board).
+
     :- private(has_won/2).
     :- mode(has_won(+atom, +list), zero_or_more).
     :- info(has_won/2,
@@ -172,6 +174,7 @@
 
 :- end_object.
 
+
 :- object(human(_C_),
     extends(player)).
 
@@ -192,6 +195,7 @@
         choose_move(Board, N).
 
 :- end_object.
+
 
 :- object(computer(_Difficulty_),
     extends(player)).
@@ -220,7 +224,6 @@
         choose_random_member(N, [1, 2, 3, 4, 5, 6, 7, 8, 9]),
         Board::available_move(N),
         write('Computer choooses '), write(N), nl.
-
     choose_move(hard, Board, N) :-
         ai_choose_move(Board, N),
         write('Computer choooses '), write(N), nl.
@@ -264,6 +267,7 @@
         list::member(N, NL).
 
 :- end_object.
+
 
 :- object(game(_Mode_)).
 
