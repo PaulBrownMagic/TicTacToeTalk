@@ -26,7 +26,7 @@ jobs:
         run: |
           swilgt -g "{loader,lgtdoc(loader)},lgtdoc::directory('.')" -t halt
           cd xml_docs
-          printf 'n\nAliases example\nPaulo Moura\n\n\n' | lgt2rst -s -t "Aliases example"
+          printf 'n\nTicTacToeTalk\nPaul Brown\n\n\n' | lgt2rst -s -t "TicTacToeTalk"
           make html
           cd _build/html
           zip -r ../../../docs.zip *
