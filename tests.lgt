@@ -53,6 +53,14 @@
     test(comp_easy_one_move, true(N == 9)) :-
         computer(easy)::choose_move(board([[x, o, x], [o, x, o], [x, o, 9]]), N).
 
+    test(human_choose_move, true(N == 1)) :-
+        ^^set_text_input('1.'),
+        human(x)::choose_move(board([[1, 2, 3], [4, 5, 6], [7, 8, 9]]), N).
+    test(human_choose_move_retry, true(N == 2)) :-
+        ^^set_text_input('1.\n2.'),
+        human(x)::choose_move(board([[o, 2, 3], [4, 5, 6], [7, 8, 9]]), N).
+
+
     test(comp_only_move, true(B == board([[x, o, x], [o, x, o], [x, o, o]]))) :-
         computer(easy)::move(board([[x, o, x], [o, x, o], [x, o, 9]]), B).
     test(comp_hard_move, true(B \= NB)) :-
@@ -124,5 +132,14 @@
     %%
     test(play_bad_mode_notice_succeeds, deterministic) :-
         game(not_a_valid_mode_ever)::play.
+    test(play_easy_blind, true) :-
+        ^^set_text_input('1.\n2.\n3.\n4.\n5.\n6.\n7.\n8.\n9.\n1.\n2.\n3.\n4.\n5.\n6.\n7.\n8.\n9.\n1.\n2.\n3.\n4.\n5.\n6.\n7.\n8.\n9.\n1.\n2.\n3.\n4.\n5.\n6.\n7.\n8.\n9.\n1.\n2.\n3.\n4.\n5.\n6.\n7.\n8.\n9.\n'),
+        game(easy)::play.
+    test(play_hard_blind, true) :-
+        ^^set_text_input('1.\n2.\n3.\n4.\n5.\n6.\n7.\n8.\n9.\n1.\n2.\n3.\n4.\n5.\n6.\n7.\n8.\n9.\n1.\n2.\n3.\n4.\n5.\n6.\n7.\n8.\n9.\n1.\n2.\n3.\n4.\n5.\n6.\n7.\n8.\n9.\n1.\n2.\n3.\n4.\n5.\n6.\n7.\n8.\n9.\n'),
+        game(hard)::play.
+    test(play_human_blind, true) :-
+        ^^set_text_input('1.\n2.\n3.\n4.\n5.\n6.\n7.\n8.\n9.\n1.\n2.\n3.\n4.\n5.\n6.\n7.\n8.\n9.\n1.\n2.\n3.\n4.\n5.\n6.\n7.\n8.\n9.\n1.\n2.\n3.\n4.\n5.\n6.\n7.\n8.\n9.\n1.\n2.\n3.\n4.\n5.\n6.\n7.\n8.\n9.\n'),
+        game('2p')::play.
 
 :- end_object.
