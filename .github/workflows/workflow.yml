@@ -68,7 +68,7 @@ jobs:
       - name: Create QLF files for the game
         run: |
           mkdir ~/collect
-          $LOGTALKHOME/scripts/embedding/swipl/swipl_logtalk_qlf.sh -c -d ~/collect -l ~/loader.lgt -s $LOGTALKUSER/scripts/embedding/settings-embedding-sample.lgt -p $LOGTALKUSER/paths/paths.pl
+          $LOGTALKHOME/scripts/embedding/swipl/swipl_logtalk_qlf.sh -c -d $HOME/collect -l $HOME/loader.lgt -s $LOGTALKUSER/scripts/embedding/settings-embedding-sample.lgt -p $LOGTALKUSER/paths/paths.pl
       - name: Upload Logtalk QLF file
         uses: actions/upload-artifact@master
         with:
