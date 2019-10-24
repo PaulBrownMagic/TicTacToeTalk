@@ -1,33 +1,31 @@
 # TicTacToeTalk
 
-![](https://github.com/PaulBrownMagic/tictactoetalk/workflows/Testing/badge.svg) [Coverage Report](https://PaulBrownMagic.github.io/TicTacToeTalk/coverage_report.html)
+A console TicTacToe game in Logtalk, which you play against the computer.
 
-![](https://github.com/PaulBrownMagic/tictactoetalk/workflows/Diagrams/badge.svg)
+![workflow](https://github.com/PaulBrownMagic/tictactoetalk/workflows/Workflow/badge.svg)
 
-![](https://github.com/PaulBrownMagic/tictactoetalk/workflows/Documenting/badge.svg)
-
-A console TicTacToe game in Logtalk, which you play against the
-computer.
+This repo [workflow](https://github.com/PaulBrownMagic/TicTacToeTalk/blob/master/.github/workflows/workflow.yml) automatically runs (on commit events) tests, publishes a
+[code coverage report](https://PaulBrownMagic.github.io/TicTacToeTalk/coverage_report.html), and makes available as build artifacts the TAP report, the code coverage report, the API documentation, and the diagrams.
 
 ## How to play
 
 Launch Logtalk and load the game:
 
-```
+```logtalk
 ?- {loader}.
 ```
 
 Then you have a choice of difficulties:
 
-```
+```logtalk
 ?- game(easy)::play.
 ```
 or
-```
+```logtalk
 ?- game(hard)::play.
 ```
 or you can play against another human:
-```
+```logtalk
 ?- game('2p')::play.
 ```
 
@@ -51,4 +49,4 @@ of extensions. A high-level view of the design:
 
 However, we've also made an effort to include documentation and unit
 tests to demonstrate the utility of the Logtalk ecosystem, hence the
-badges above.
+workflow badge and information above.

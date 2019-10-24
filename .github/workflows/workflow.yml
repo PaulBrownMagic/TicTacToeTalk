@@ -1,9 +1,9 @@
-name: Testing
+name: Workflow
 
 on: [push]
 
 jobs:
-  test:
+  workflow:
     runs-on: ubuntu-latest
     steps:
       - name: Install SWI-Prolog backend
@@ -42,3 +42,26 @@ jobs:
         env:
           BUILD_DIR: public
           GH_PAT: ${{ secrets.GH_PAT }}
+      - name: Generate the application documentation
+        run: |
+          swilgt -g "{loader,lgtdoc(loader)},lgtdoc::directory('.')" -t halt
+          cd xml_docs
+          printf 'n\nTicTacToeTalk\nPaul Brown\n\n\n' | lgt2rst -s -t "TicTacToeTalk"
+          make html
+          cd _build/html
+          zip -r ../../../docs.zip *
+      - name: Upload documentation
+        uses: actions/upload-artifact@master
+        with:
+          name: docs
+          path: docs.zip
+      - name: Generate the application diagrams
+        run: |
+          swilgt -g "{loader,diagrams(loader)},diagrams::directory('.')" -t halt
+          lgt2svg
+          zip diagrams.zip *.svg
+      - name: Upload diagrams
+        uses: actions/upload-artifact@master
+        with:
+          name: diagrams
+          path: diagrams.zip
