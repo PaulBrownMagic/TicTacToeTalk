@@ -9,7 +9,7 @@ jobs:
       - name: Install SWI-Prolog backend
         uses: logtalk-actions/setup-swi-prolog@master
         with:
-          swipl-branch: stable
+          swipl-branch: devel
           swipl-version: latest
       - name: Install Logtalk
         uses: logtalk-actions/setup-logtalk@master
@@ -68,13 +68,13 @@ jobs:
       - name: Create QLF files for the game
         run: |
           mkdir ~/collect
-          $LOGTALKHOME/scripts/embedding/swipl/swipl_logtalk_qlf.sh -c -d ~/collect -l loader.lgt -s $LOGTALKUSER/scripts/embedding/settings-embedding-sample.lgt -p $LOGTALKUSER/paths/paths.pl
+          $LOGTALKHOME/scripts/embedding/swipl/swipl_logtalk_qlf.sh -c -d ~/collect -l ~/loader.lgt -s $LOGTALKUSER/scripts/embedding/settings-embedding-sample.lgt -p $LOGTALKUSER/paths/paths.pl
       - name: Upload Logtalk QLF file
         uses: actions/upload-artifact@master
         with:
           name: logtalk.qlf
           path: /home/runner/collect/logtalk.qlf
-      - name: Upload Logtalk QLF file
+      - name: Upload application QLF file
         uses: actions/upload-artifact@master
         with:
           name: application.qlf
