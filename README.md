@@ -33,6 +33,22 @@ In an easy game the computer makes random moves. In the hard game it
 uses a smart strategy to actively try and win, but not so smart that
 it's impossible to win!
 
+## Running the precompiled version (SWI-Prolog 8.1.x only)
+
+Go to the [commits](https://github.com/PaulBrownMagic/TicTacToeTalk/commits/master)
+list, click on the green check mark of the latest successful commit,
+and then click on details. On the build report page, click on the
+artifacts list and download both `logtalk.qlf` and `application.qlf`
+files. Uncompress the files, start SWI-Prolog, and load the files:
+
+```logtalk
+?- [logtalk, application].
+...
+true
+```
+
+After, use the queries in the section above to start the game.
+
 ## Portability
 
 Due to the use of non-ASCII characters to draw the board, the current
