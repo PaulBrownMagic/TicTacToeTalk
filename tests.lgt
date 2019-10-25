@@ -2,10 +2,14 @@
 	extends(lgtunit)).
 
 	:- info([
-		version is 1.0,
+		version is 1.1,
 		author is 'Paul Brown',
-		date is 2020/10/22,
+		date is 2019/10/25,
 		comment is 'Unit tests for tictactoe.'
+	]).
+
+	:- uses(integer, [
+		between/3
 	]).
 
 	cover(game(_)).
@@ -13,6 +17,9 @@
 	cover(player).
 	cover(human(_)).
 	cover(computer(_)).
+
+	cleanup :-
+		^^clean_text_input.
 
     %%
     % Board
