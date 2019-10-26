@@ -65,10 +65,9 @@ jobs:
         with:
           name: diagrams
           path: diagrams.zip
-      - name: Create QLF files for the game
+      - name: Create QLF and saved state files for the game
         run: |
-          mkdir ~/collect
-          $LOGTALKHOME/scripts/embedding/swipl/swipl_logtalk_qlf.sh -c -d ~/collect -l $GITHUB_WORKSPACE/loader.lgt -s $LOGTALKUSER/scripts/embedding/settings-embedding-sample.lgt -p $LOGTALKUSER/paths/paths.pl
+          $LOGTALKHOME/scripts/embedding/swipl/swipl_logtalk_qlf.sh -c -x -d ~/collect -n TicTacToeTalk -l $GITHUB_WORKSPACE/loader.lgt -s $LOGTALKUSER/scripts/embedding/settings-embedding-sample.lgt -p $LOGTALKUSER/paths/paths.pl -g "'::'(game(hard),play)"
       - name: Upload Logtalk QLF file
         uses: actions/upload-artifact@master
         with:
@@ -79,3 +78,8 @@ jobs:
         with:
           name: application.qlf
           path: /home/runner/collect/application.qlf
+      - name: Upload saved state
+        uses: actions/upload-artifact@master
+        with:
+          name: TicTacToeTalk
+          path: /home/runner/collect/TicTacToeTalk

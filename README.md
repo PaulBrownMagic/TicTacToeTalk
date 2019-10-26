@@ -5,7 +5,7 @@ A console TicTacToe game in Logtalk, which you play against the computer.
 ![workflow](https://github.com/PaulBrownMagic/tictactoetalk/workflows/Workflow/badge.svg)
 
 This repo [workflow](https://github.com/PaulBrownMagic/TicTacToeTalk/blob/master/.github/workflows/workflow.yml) automatically runs (on commit events) tests, publishes a
-[code coverage report](https://PaulBrownMagic.github.io/TicTacToeTalk/coverage_report.html), and makes available as build artifacts the TAP report, the code coverage report, the API documentation, the source code diagrams, and the SWI-Prolog 8.1.x QLF files with the precompiled game.
+[code coverage report](https://PaulBrownMagic.github.io/TicTacToeTalk/coverage_report.html), and makes available as build artifacts the TAP report, the code coverage report, the API documentation, the source code diagrams, and the SWI-Prolog 8.1.x QLF files and saved state with the precompiled game.
 
 ## How to play
 
