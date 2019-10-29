@@ -9,8 +9,8 @@ jobs:
       - name: Install SWI-Prolog backend
         uses: logtalk-actions/setup-swi-prolog@master
         with:
-          swipl-branch: devel
-          swipl-version: latest
+          swi-prolog-branch: devel
+          swi-prolog-version: latest
       - name: Install Logtalk
         uses: logtalk-actions/setup-logtalk@master
         with:
