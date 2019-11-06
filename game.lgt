@@ -80,20 +80,22 @@
 :- end_object.
 
 
-:- object(player).
+:- object(player(_Char_)).
 
     :- info([ version is 1.0
             , author is 'Paul Brown'
             , date is 2019/10/22
-            , comment is 'A human player'
+            , comment is 'A game player'
+            , parnames is ['Char']
             ]).
 
-    :- private(char/1).
+    :- public(char/1).
     :- mode(char(?atom), zero_or_one).
     :- info(char/1,
         [ comment is 'The player''s character (x or o)'
         , argnames is ['Char']
         ]).
+    char(_Char_).
 
     :- public(choose_move/2).
     :- mode(choose_move(+list, -integer), zero_or_more).
@@ -109,8 +111,7 @@
         , argnames is ['Board']
         ]).
     has_won(board(Board)) :-
-        ::char(C),
-        has_won(C, Board).
+        has_won(_Char_, Board).
 
     :- private(has_won/2).
     :- mode(has_won(+atom, +list), zero_or_more).
@@ -159,8 +160,7 @@
        ]).
     move(Board, NewBoard) :-
         ::choose_move(Board, N),
-        ::char(C),
-        Board::update(N, C, NewBoard).
+        Board::update(N, _Char_, NewBoard).
 
     :- public(win_msg/0).
     :- mode(win_msg, zero_or_one).
@@ -168,16 +168,15 @@
         [ comment is 'Print out a congratulatory message on winning'
         ]).
     win_msg :-
-        ::char(C),
         write('Player '),
-        write(C),
+        write(_Char_),
         write(' wins!\n').
 
 :- end_object.
 
 
-:- object(human(_C_),
-    extends(player)).
+:- object(human(_Char_),
+    extends(player(_Char_))).
 
     :- info([ version is 1.0
             , author is 'Paul Brown'
@@ -186,10 +185,8 @@
             , parnames is ['Char']
             ]).
 
-   char(_C_).
-
    choose_move(Board, N) :-
-        write('Where should '), write(_C_), write(' go?\n'),
+        write('Where should '), write(_Char_), write(' go?\n'),
         read(N), integer(N),
         Board::available_move(N)
     ; % Move is invalid, notify and recurse
@@ -200,7 +197,7 @@
 
 
 :- object(computer(_Difficulty_),
-    extends(player)).
+    extends(player(o))).
 
     :- info([ version is 1.0
             , author is 'Paul Brown'
@@ -208,8 +205,6 @@
             , comment is 'A computer player'
             , parnames is ['Difficulty']
             ]).
-
-    char(o).
 
     win_msg :-
         write('Sorry, you lose!\n').
