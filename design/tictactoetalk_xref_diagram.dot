@@ -1,0 +1,61 @@
+digraph "tictactoetalk" {
+rankdir="TB"
+ranksep="1.0"
+compound="true"
+splines="true"
+pack="true"
+clusterrank="local"
+labeljust="l"
+margin="1.0"
+fontname="Courier"
+fontsize="10"
+fontcolor="dimgray"
+pencolor="dimgray"
+node [shape="ellipse",style="filled",fillcolor="white",fontname="Courier",fontsize="9"]
+edge [fontname="Courier",fontsize="9"]
+label="Cross-referencing diagram for directory tictactoetalk/\lGenerated on 2019/11/06, 11:48\l"
+
+subgraph "cluster_directory_tictactoetalk" {
+bgcolor="whitesmoke"
+style="rounded"
+margin="10"
+label=<<TABLE border="0" cellborder="0"><TR><TD tooltip="tictactoetalk/">tictactoetalk/</TD></TR></TABLE>>
+tooltip="tictactoetalk/"
+subgraph "cluster_file_/home/paul/Development/tictactoetalk/loader.lgt" {
+bgcolor="snow"
+style="rounded"
+margin="10"
+label=<<TABLE border="0" cellborder="0"><TR><TD tooltip="tictactoetalk/loader.lgt">loader.lgt</TD></TR></TABLE>>
+tooltip="tictactoetalk/loader.lgt"
+}
+
+subgraph "cluster_file_/home/paul/Development/tictactoetalk/game.lgt" {
+bgcolor="snow"
+style="rounded"
+margin="10"
+label=<<TABLE border="0" cellborder="0"><TR><TD tooltip="tictactoetalk/game.lgt">game.lgt</TD></TR></TABLE>>
+tooltip="tictactoetalk/game.lgt"
+"board(Board)" [shape="box",tooltip="prototype",style="filled",fillcolor="cornsilk",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">board(Board)</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">prototype</FONT></TD><TD> </TD></TR><TR><TD> </TD></TR><TR><TD> </TD><TD>init/0</TD><TD> </TD></TR><TR><TD> </TD><TD>available_move/1</TD><TD> </TD></TR><TR><TD> </TD><TD>update/3</TD><TD> </TD></TR><TR><TD> </TD><TD>print_board/0</TD><TD> </TD></TR></TABLE>>]
+"human(Char)" [shape="box",tooltip="prototype",style="filled",fillcolor="cornsilk",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">human(Char)</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">prototype</FONT></TD><TD> </TD></TR></TABLE>>]
+"computer(Difficulty)" [shape="box",tooltip="prototype",style="filled",fillcolor="cornsilk",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">computer(Difficulty)</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">prototype</FONT></TD><TD> </TD></TR><TR><TD> </TD></TR><TR><TD> </TD><TD>choose_move/3</TD><TD> </TD></TR></TABLE>>]
+"game(Mode)" [shape="box",tooltip="prototype",style="filled",fillcolor="cornsilk",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">game(Mode)</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">prototype</FONT></TD><TD> </TD></TR><TR><TD> </TD></TR><TR><TD> </TD><TD>play/0</TD><TD> </TD></TR></TABLE>>]
+"player(Char)" [shape="component",tooltip="category",style="filled",fillcolor="lightcyan",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">player(Char)</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">category</FONT></TD><TD> </TD></TR><TR><TD> </TD></TR><TR><TD> </TD><TD>char/1</TD><TD> </TD></TR><TR><TD> </TD><TD>choose_move/2</TD><TD> </TD></TR><TR><TD> </TD><TD>has_won/1</TD><TD> </TD></TR><TR><TD> </TD><TD>move/2</TD><TD> </TD></TR><TR><TD> </TD><TD>win_msg/0</TD><TD> </TD></TR></TABLE>>]
+}
+
+"board(Board)" -> "list" [arrowhead="normal",labeltooltip="calls",label=<flatten/2<BR/>member/2<BR/>select/4>]
+"board(Board)" -> "meta" [arrowhead="normal",labeltooltip="calls",label=<map/2>]
+"human(Char)" -> "user" [arrowhead="normal",labeltooltip="calls",label=<available_move/1>]
+"computer(Difficulty)" -> "user" [arrowhead="normal",labeltooltip="calls",label=<available_move/1<BR/>update/3>]
+"computer(Difficulty)" -> "fast_random" [arrowhead="normal",labeltooltip="calls",label=<permutation/2>]
+"computer(Difficulty)" -> "list" [arrowhead="normal",labeltooltip="calls",label=<member/2>]
+"computer(Difficulty)" -> "human(Char)" [arrowhead="normal",labeltooltip="calls",label=<has_won/1>]
+"game(Mode)" -> "user" [arrowhead="normal",labeltooltip="calls",label=<available_move/1<BR/>has_won/1<BR/>move/2<BR/>print_board/0<BR/>win_msg/0>]
+"game(Mode)" -> "board(Board)" [arrowhead="normal",labeltooltip="calls",label=<init/0>]
+"player(Char)" -> "user" [arrowhead="normal",labeltooltip="calls",label=<update/3>]
+"list" [shape="box",tooltip="prototype",style="filled,dashed",fillcolor="beige",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">list</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">prototype</FONT></TD><TD> </TD></TR></TABLE>>]
+"meta" [shape="box",tooltip="prototype",style="filled,dashed",fillcolor="beige",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">meta</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">prototype</FONT></TD><TD> </TD></TR></TABLE>>]
+"user" [shape="box",tooltip="built-in prototype",style="filled,dashed",fillcolor="beige",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">user</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">built-in prototype</FONT></TD><TD> </TD></TR></TABLE>>]
+"fast_random" [shape="box",tooltip="prototype",style="filled,dashed",fillcolor="beige",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">fast_random</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">prototype</FONT></TD><TD> </TD></TR></TABLE>>]
+}
+
+}

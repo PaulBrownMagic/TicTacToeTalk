@@ -1,0 +1,33 @@
+digraph "tictactoetalk" {
+rankdir="TB"
+ranksep="1.0"
+compound="true"
+splines="true"
+pack="true"
+clusterrank="local"
+labeljust="l"
+margin="1.0"
+fontname="Courier"
+fontsize="10"
+fontcolor="dimgray"
+pencolor="dimgray"
+node [shape="ellipse",style="filled",fillcolor="white",fontname="Courier",fontsize="9"]
+edge [fontname="Courier",fontsize="9"]
+label="Directory load diagram for directory tictactoetalk/\lGenerated on 2019/11/06, 11:48\l"
+
+subgraph "cluster_directory_tictactoetalk" {
+bgcolor="whitesmoke"
+style="rounded"
+margin="10"
+label=<<TABLE border="0" cellborder="0"><TR><TD tooltip="tictactoetalk/">tictactoetalk/</TD></TR></TABLE>>
+tooltip="tictactoetalk/"
+"/home/paul/Development/tictactoetalk/" [shape="tab",tooltip="tictactoetalk/",style="filled",fillcolor="lightsalmon",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">tictactoetalk/</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">directory</FONT></TD><TD> </TD></TR></TABLE>>]
+"/home/paul/logtalk/library/types/" [shape="tab",tooltip="logtalk/library/types/",style="filled,dashed",fillcolor="salmon",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">logtalk/library/types/</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">directory</FONT></TD><TD> </TD></TR></TABLE>>]
+"/home/paul/logtalk/library/meta/" [shape="tab",tooltip="logtalk/library/meta/",style="filled,dashed",fillcolor="salmon",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">logtalk/library/meta/</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">directory</FONT></TD><TD> </TD></TR></TABLE>>]
+"/home/paul/logtalk/library/random/" [shape="tab",tooltip="logtalk/library/random/",style="filled,dashed",fillcolor="salmon",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">logtalk/library/random/</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">directory</FONT></TD><TD> </TD></TR></TABLE>>]
+"/home/paul/Development/tictactoetalk/" -> "/home/paul/logtalk/library/types/" [arrowhead="normal",labeltooltip="loads",label=<loads>]
+"/home/paul/Development/tictactoetalk/" -> "/home/paul/logtalk/library/meta/" [arrowhead="normal",labeltooltip="loads",label=<loads>]
+"/home/paul/Development/tictactoetalk/" -> "/home/paul/logtalk/library/random/" [arrowhead="normal",labeltooltip="loads",label=<loads>]
+}
+
+}

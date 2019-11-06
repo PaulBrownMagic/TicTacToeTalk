@@ -1,0 +1,35 @@
+digraph "tictactoetalk" {
+rankdir="TB"
+ranksep="1.0"
+compound="true"
+splines="true"
+pack="true"
+clusterrank="local"
+labeljust="l"
+margin="1.0"
+fontname="Courier"
+fontsize="10"
+fontcolor="dimgray"
+pencolor="dimgray"
+node [shape="ellipse",style="filled",fillcolor="white",fontname="Courier",fontsize="9"]
+edge [fontname="Courier",fontsize="9"]
+label="File load diagram for directory tictactoetalk/\lGenerated on 2019/11/06, 11:48\l"
+
+subgraph "cluster_directory_tictactoetalk" {
+bgcolor="whitesmoke"
+style="rounded"
+margin="10"
+label=<<TABLE border="0" cellborder="0"><TR><TD tooltip="tictactoetalk/">tictactoetalk/</TD></TR></TABLE>>
+tooltip="tictactoetalk/"
+"/home/paul/Development/tictactoetalk/loader.lgt" [shape="box",tooltip="tictactoetalk/loader.lgt",style="filled",fillcolor="paleturquoise",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">loader.lgt</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">file</FONT></TD><TD> </TD></TR></TABLE>>]
+"/home/paul/Development/tictactoetalk/game.lgt" [shape="box",tooltip="tictactoetalk/game.lgt",style="filled",fillcolor="paleturquoise",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">game.lgt</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">file</FONT></TD><TD> </TD></TR></TABLE>>]
+"/home/paul/logtalk/library/types/loader.lgt" [shape="box",tooltip="logtalk/library/types/loader.lgt",style="filled,dashed",fillcolor="powderblue",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">loader.lgt</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">file</FONT></TD><TD> </TD></TR></TABLE>>]
+"/home/paul/logtalk/library/meta/loader.lgt" [shape="box",tooltip="logtalk/library/meta/loader.lgt",style="filled,dashed",fillcolor="powderblue",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">loader.lgt</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">file</FONT></TD><TD> </TD></TR></TABLE>>]
+"/home/paul/logtalk/library/random/loader.lgt" [shape="box",tooltip="logtalk/library/random/loader.lgt",style="filled,dashed",fillcolor="powderblue",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">loader.lgt</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">file</FONT></TD><TD> </TD></TR></TABLE>>]
+"/home/paul/Development/tictactoetalk/loader.lgt" -> "/home/paul/logtalk/library/types/loader.lgt" [arrowhead="normal",labeltooltip="loads",label=<loads>]
+"/home/paul/Development/tictactoetalk/loader.lgt" -> "/home/paul/logtalk/library/meta/loader.lgt" [arrowhead="normal",labeltooltip="loads",label=<loads>]
+"/home/paul/Development/tictactoetalk/loader.lgt" -> "/home/paul/logtalk/library/random/loader.lgt" [arrowhead="normal",labeltooltip="loads",label=<loads>]
+"/home/paul/Development/tictactoetalk/loader.lgt" -> "/home/paul/Development/tictactoetalk/game.lgt" [arrowhead="normal",labeltooltip="loads",label=<loads>]
+}
+
+}

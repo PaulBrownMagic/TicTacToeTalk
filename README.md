@@ -59,10 +59,19 @@ currently be played on CxProlog, SICStus Prolog, SWI-Prolog, and YAP.
 
 We've tried to keep this a relatively simple but comprehensive example.
 So for the OO we're only using objects, parametric objects, and a couple
-of extensions. A high-level view of the design:
+of extensions. A high-level view of the pre-development design:
 
 ![object model](design/ord.png)
+
+Compared to the implementation with Logtalk generated diagrams:
+
+**Inheritance**
+![inheritance_diagram](design/tictactoetalk_inheritance_diagram.svg)
+
+**Entities**
+![inheritance_diagram](design/tictactoetalk_entity_diagram.svg)
 
 However, we've also made an effort to include documentation and unit
 tests to demonstrate the utility of the Logtalk ecosystem, hence the
 workflow badge and information above.
+

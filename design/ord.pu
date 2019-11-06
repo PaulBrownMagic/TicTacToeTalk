@@ -1,18 +1,18 @@
 @startuml
-class game(Mode) << (O, #11FF33) >> {
+class game(Mode) << (O, #11ff33) >> {
     {method} + play/0
     {method} -turn/3
 }
 
 
-class board(Board) << (O, #1133FF) >> {
+class board(Board) << (O, #11ff33) >> {
     {method} +init/0
     {method} +available_move/1
     {method} +update/3
     {method} +print_board/1
 }
 
-class player << (O, #FF1133) >> {
+class player << (C, #ffff33) >> {
     {field} -char/1
     {method} +move/2
     {method} +choose_move/2
@@ -20,9 +20,9 @@ class player << (O, #FF1133) >> {
     {method} +win_msg/0
 }
 
-class human(Char) << (O, #FF1133) >>
+class human(Char) << (O, #11ff33) >>
 
-class computer(Difficulty) << (O, #FF1133) >> {
+class computer(Difficulty) << (O, #11ff33) >> {
     {method} -choose_move/3
 }
 
