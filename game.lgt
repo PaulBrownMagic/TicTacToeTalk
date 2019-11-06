@@ -80,7 +80,7 @@
 :- end_object.
 
 
-:- object(player(_Char_)).
+:- category(player(_Char_)).
 
     :- info([ version is 1.0
             , author is 'Paul Brown'
@@ -172,11 +172,11 @@
         write(_Char_),
         write(' wins!\n').
 
-:- end_object.
+:- end_category.
 
 
 :- object(human(_Char_),
-    extends(player(_Char_))).
+    imports(player(_Char_))).
 
     :- info([ version is 1.0
             , author is 'Paul Brown'
@@ -197,7 +197,7 @@
 
 
 :- object(computer(_Difficulty_),
-    extends(player(o))).
+    imports(player(o))).
 
     :- info([ version is 1.0
             , author is 'Paul Brown'

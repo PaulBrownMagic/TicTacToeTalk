@@ -2,9 +2,9 @@
 	extends(lgtunit)).
 
 	:- info([
-		version is 1.1,
+		version is 1.2,
 		author is 'Paul Brown',
-		date is 2019/10/25,
+		date is 2019/11/06,
 		comment is 'Unit tests for tictactoe.'
 	]).
 
@@ -14,7 +14,7 @@
 
 	cover(game(_)).
 	cover(board(_)).
-	cover(player).
+	cover(player(_)).
 	cover(human(_)).
 	cover(computer(_)).
 
@@ -66,10 +66,6 @@
     test(human_choose_move_retry, true(N == 2)) :-
         ^^set_text_input('1.\n2.'),
         human(x)::choose_move(board([[o, 2, 3], [4, 5, 6], [7, 8, 9]]), N).
-
-    test(player_choose_move, fail) :-
-        player(_)::choose_move(board([[o, 2, 3], [4, 5, 6], [7, 8, 9]]), _).
-
 
     test(comp_only_move, true(B == board([[x, o, x], [o, x, o], [x, o, o]]))) :-
         computer(easy)::move(board([[x, o, x], [o, x, o], [x, o, 9]]), B).
