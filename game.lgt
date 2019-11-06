@@ -6,6 +6,7 @@
             , author is 'Paul Brown'
             , date is 2019/10/22
             , comment is 'The TicTacToe game board'
+            , parnames is ['Board']
             ]).
 
     :- public(init/0).
@@ -182,6 +183,7 @@
             , author is 'Paul Brown'
             , date is 2019/10/22
             , comment is 'A human player'
+            , parnames is ['Char']
             ]).
 
    char(_C_).
@@ -204,6 +206,7 @@
             , author is 'Paul Brown'
             , date is 2019/10/22
             , comment is 'A computer player'
+            , parnames is ['Difficulty']
             ]).
 
     char(o).
@@ -275,6 +278,7 @@
             , author is 'Paul Brown'
             , date is 2019/10/22
             , comment is 'A game of TicTacToe'
+            , parnames is ['Mode']
             ]).
 
     :- public(play/0).
