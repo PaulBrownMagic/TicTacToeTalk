@@ -13,7 +13,7 @@ fontcolor="dimgray"
 pencolor="dimgray"
 node [shape="ellipse",style="filled",fillcolor="white",fontname="Courier",fontsize="9"]
 edge [fontname="Courier",fontsize="9"]
-label="Cross-referencing diagram for directory tictactoetalk/\lGenerated on 2019/11/06, 11:48\l"
+label="Cross-referencing diagram for directory tictactoetalk/\lGenerated on 2019/11/07, 00:21\l"
 
 subgraph "cluster_directory_tictactoetalk" {
 bgcolor="whitesmoke"
@@ -44,17 +44,12 @@ tooltip="tictactoetalk/game.lgt"
 
 "board(Board)" -> "list" [arrowhead="normal",labeltooltip="calls",label=<flatten/2<BR/>member/2<BR/>select/4>]
 "board(Board)" -> "meta" [arrowhead="normal",labeltooltip="calls",label=<map/2>]
-"human(Char)" -> "user" [arrowhead="normal",labeltooltip="calls",label=<available_move/1>]
-"computer(Difficulty)" -> "user" [arrowhead="normal",labeltooltip="calls",label=<available_move/1<BR/>update/3>]
 "computer(Difficulty)" -> "fast_random" [arrowhead="normal",labeltooltip="calls",label=<permutation/2>]
 "computer(Difficulty)" -> "list" [arrowhead="normal",labeltooltip="calls",label=<member/2>]
 "computer(Difficulty)" -> "human(Char)" [arrowhead="normal",labeltooltip="calls",label=<has_won/1>]
-"game(Mode)" -> "user" [arrowhead="normal",labeltooltip="calls",label=<available_move/1<BR/>has_won/1<BR/>move/2<BR/>print_board/0<BR/>win_msg/0>]
 "game(Mode)" -> "board(Board)" [arrowhead="normal",labeltooltip="calls",label=<init/0>]
-"player(Char)" -> "user" [arrowhead="normal",labeltooltip="calls",label=<update/3>]
 "list" [shape="box",tooltip="prototype",style="filled,dashed",fillcolor="beige",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">list</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">prototype</FONT></TD><TD> </TD></TR></TABLE>>]
 "meta" [shape="box",tooltip="prototype",style="filled,dashed",fillcolor="beige",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">meta</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">prototype</FONT></TD><TD> </TD></TR></TABLE>>]
-"user" [shape="box",tooltip="built-in prototype",style="filled,dashed",fillcolor="beige",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">user</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">built-in prototype</FONT></TD><TD> </TD></TR></TABLE>>]
 "fast_random" [shape="box",tooltip="prototype",style="filled,dashed",fillcolor="beige",label=<<TABLE border="0" cellborder="0" cellspacing="0" cellpadding="0"><TR><TD> </TD><TD><FONT POINT-SIZE="11">fast_random</FONT></TD><TD> </TD></TR><TR><TD> </TD><TD><FONT POINT-SIZE="7">prototype</FONT></TD><TD> </TD></TR></TABLE>>]
 }
 
