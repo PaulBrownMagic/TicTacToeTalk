@@ -2,9 +2,9 @@
 
 :- object(board(_Board_)).
 
-    :- info([ version is 1.0
+    :- info([ version is 1:0:0
             , author is 'Paul Brown'
-            , date is 2019/10/22
+            , date is 2019-10-22
             , comment is 'The TicTacToe game board'
             , parnames is ['Board']
             ]).
@@ -82,9 +82,9 @@
 
 :- category(player(_Char_)).
 
-    :- info([ version is 1.0
+    :- info([ version is 1:0:0
             , author is 'Paul Brown'
-            , date is 2019/10/22
+            , date is 2019-10-22
             , comment is 'A game player'
             , parnames is ['Char']
             ]).
@@ -178,9 +178,9 @@
 :- object(human(_Char_),
     imports(player(_Char_))).
 
-    :- info([ version is 1.0
+    :- info([ version is 1:0:0
             , author is 'Paul Brown'
-            , date is 2019/10/22
+            , date is 2019-10-22
             , comment is 'A human player'
             , parnames is ['Char']
             ]).
@@ -199,9 +199,9 @@
 :- object(computer(_Difficulty_),
     imports(player(o))).
 
-    :- info([ version is 1.0
+    :- info([ version is 1:0:0
             , author is 'Paul Brown'
-            , date is 2019/10/22
+            , date is 2019-10-22
             , comment is 'A computer player'
             , parnames is ['Difficulty']
             ]).
@@ -269,9 +269,9 @@
 
 :- object(game(_Mode_)).
 
-    :- info([ version is 1.0
+    :- info([ version is 1:0:0
             , author is 'Paul Brown'
-            , date is 2019/10/22
+            , date is 2019-10-22
             , comment is 'A game of TicTacToe'
             , parnames is ['Mode']
             ]).
