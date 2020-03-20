@@ -2,9 +2,9 @@
 	extends(lgtunit)).
 
 	:- info([
-		version is 1.2,
+		version is 1:2:0,
 		author is 'Paul Brown',
-		date is 2019/11/06,
+		date is 2019-11-06,
 		comment is 'Unit tests for tictactoe.'
 	]).
 

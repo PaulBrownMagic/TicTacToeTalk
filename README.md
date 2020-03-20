@@ -1,6 +1,6 @@
 # TicTacToeTalk
 
-A console TicTacToe game in Logtalk, which you play against the computer.
+A console TicTacToe game in Logtalk (3.36.0 or later), which you play against the computer.
 
 ![workflow](https://github.com/PaulBrownMagic/tictactoetalk/workflows/Workflow/badge.svg)
 
